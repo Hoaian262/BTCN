@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Le Hoai An's JavaScript Learning Portfolio - UEH 2026">
+
+    <title>Le Hoai An — JavaScript Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER & HERO ================= -->
+
+    <div class="intro-wrapper" id="top">
+
+        <!-- Decorative background -->
+        <svg class="background-line"
+             viewBox="0 0 1536 1024"
+             preserveAspectRatio="none"
+             aria-hidden="true">
+
+            <path
+                d="M530 -40
+                   C540 155 630 310 850 380
+                   C1030 415 1120 380 1240 490
+                   C1350 580 1460 570 1570 485"
+                fill="none"
+                stroke="#5542C7"
+                stroke-width="9"
+                stroke-linecap="round"/>
+
+        </svg>
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="brand">
+
+              <a href="#top" class="logo" aria-label="Homepage">
+<img src="assets/logo.png" alt="Logo">
+</a>
+
+                <span class="header-divider"></span>
+
+            </div>
+
+            <nav class="navigation"
+                 aria-label="Main navigation">
+
+                <a href="#about">About</a>
+
+                <a href="#labs">JavaScript Labs</a>
+
+                <a href="#reflection">Reflection</a>
+
+            </nav>
+
+            <!-- Thay đường dẫn GitHub của bạn -->
+            <a class="github"
+               href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub"
+               title="GitHub">
+
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.098c1.02.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+
+            </a>
+
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-content">
+
+                <div class="eyebrow">
+
+                    <span class="dot"></span>
+
+                    <span>
+                        A STUDENT PORTFOLIO · UEH 2026
+                    </span>
+
+                </div>
+
+                <h1 class="hero-title">
+
+                    <span class="hello">
+                        Hello!
+                    </span>
+
+                    <span class="name-line">
+                        <span>I'm</span>
+                    <img
+    class="signature-image"
+    src="assets/an-signature.svg"
+    alt="An">
+                    </span>
+
+                </h1>
+
+                <p class="description">
+
+                    Đây là không gian ghi lại hành trình học
+                    JavaScript và những điều mình học được
+                    qua từng bài thực hành.
+
+                </p>
+
+                <a href="#labs" class="explore">
+
+                    EXPLORE MY WORK
+
+                    <span>↘</span>
+
+                </a>
+
+                <div class="student-info">
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            STUDENT ID
+                        </span>
+
+                        <span>31241027129</span>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            CLASS
+                        </span>
+
+                        <span>PHÁT TRIỂN ỨNG DỤNG</span>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            UNIVERSITY
+                        </span>
+
+                        <span>
+                            University of Economics HCMC
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT ILLUSTRATION -->
+            <div class="hero-visual">
+
+                <!-- Avatar: Để trống theo yêu cầu -->
+                <div class="avatar-frame">
+ <img src="assets/ava.PNG"
+                         alt="An's portrait">
+                    <!--
+                    Bỏ comment dòng bên dưới
+                    khi đã thêm ảnh vào assets.
+
+                    <img src="assets/avatar.png"
+                         alt="An's portrait">
+                    -->
+
+                </div>
+
+                <!-- Decorative marks -->
+                <svg class="visual-doodles"
+                     viewBox="0 0 700 830"
+                     aria-hidden="true">
+
+                    <g fill="none"
+                       stroke="#5542C7"
+                       stroke-width="11"
+                       stroke-linecap="round">
+
+                        
+
+                        <!-- Right accent -->
+                        <path d="M505 37 L524 7"/>
+                        <path d="M532 53 L560 29"/>
+                        <path d="M539 83 L574 72"/>
+
+                    </g>
+
+                </svg>
+
+                <!-- STICK FIGURE -->
+                <svg class="stick-figure"
+                     viewBox="0 0 700 830"
+                     fill="none"
+                     aria-hidden="true">
+
+                    <g stroke="#171717"
+                       stroke-width="9"
+                       stroke-linecap="round"
+                       stroke-linejoin="round">
+
+                        <!-- Body -->
+                        <path
+                            d="M320 415
+                               C319 461 305 502 295 550"/>
+
+                        <!-- Left arm: Hand on hip -->
+                        <path
+                            d="M320 415
+                               C269 430 186 472 183 488
+                               C180 504 238 527 280 541"/>
+
+                        <!-- Left hand -->
+                        <path
+                            d="M295 550
+                               C280 528 261 543 250 557
+                               C238 575 274 578 295 550"/>
+
+                        <!-- Right arm: Waving -->
+                        <path
+                            d="M320 415
+                               C400 449 503 432 568 302"/>
+
+                        <!-- Waving hand -->
+                        <path
+                            d="M568 302
+                               C548 300 537 279 539 268
+                               C541 253 554 269 559 279
+                               L567 245
+                               C572 230 583 237 581 254
+                               L579 275
+                               C589 259 600 254 603 267
+                               C609 286 592 305 568 302 Z"/>
+
+                        <!-- Left leg -->
+                        <path
+                            d="M295 550
+                               C268 620 239 718 213 804"/>
+
+                        <!-- Right leg -->
+                        <path
+                            d="M295 550
+                               C339 635 367 728 397 804"/>
+
+                        <!-- Feet -->
+                        <path d="M190 804 L237 804"/>
+                        <path d="M375 804 L425 804"/>
+
+                    </g>
+
+                    <!-- Waving motion -->
+                    <g stroke="#171717"
+                       stroke-width="6"
+                       stroke-linecap="round">
+
+                        <path
+                            d="M612 225 Q634 241 630 267"/>
+
+                        <path
+                            d="M639 235 Q655 250 650 273"/>
+
+                    </g>
+
+                </svg>
+
+                <!-- Handwritten note -->
+                <div class="handwritten-note">
+
+                    <svg class="note-arrow"
+                         viewBox="0 0 100 100"
+                         aria-hidden="true">
+
+                        <path
+                            d="M84 90 Q82 34 15 18
+                               M15 18 L41 9
+                               M15 18 L27 43"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+
+                    </svg>
+
+                    this is my<br>
+                    learning<br>
+                    journey
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <a class="scroll-indicator" href="#labs">
+
+            SCROLL TO FOLLOW THE JOURNEY ↓
+
+        </a>
+
+    </div>
+
+
+    <main>
+
+        <!-- ================= JAVASCRIPT LABS ================= -->
+
+        <section class="section labs-section" id="labs">
+
+            <div class="section-label">
+
+                <span class="dot"></span>
+
+                01 / SELECTED WORK
+
+            </div>
+
+            <div class="section-heading">
+
+                <h2>
+                    Learning by
+                    <span class="accent">doing.</span>
+                </h2>
+
+                <p>
+
+                    Ba bài thực hành ghi lại quá trình tìm hiểu
+                    JavaScript, từ kiến thức nền tảng đến việc
+                    xây dựng các tương tác trên website.
+
+                </p>
+
+            </div>
+
+            <div class="lab-list">
+
+                <!-- LAB 08 -->
+                <a class="lab-row" href="Lab08/index.html">
+
+                    <span class="lab-number">01 / LAB 08</span>
+
+                    <div class="lab-content">
+
+                        <span class="lab-category">
+                            THE FOUNDATION
+                        </span>
+
+                        <h3>Language Foundations</h3>
+
+                        <p>
+
+                            Làm quen với cú pháp JavaScript,
+                            biến, kiểu dữ liệu, toán tử,
+                            cấu trúc điều khiển và hàm.
+
+                        </p>
+
+                        <div class="tags">
+
+                            <span>JavaScript</span>
+
+                            <span>Variables</span>
+
+                            <span>Functions</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="lab-art art-code"
+                         aria-hidden="true">
+
+                        { js }
+
+                    </div>
+
+                    <span class="lab-arrow">↗</span>
+
+                </a>
+
+                <!-- LAB 09 -->
+                <a class="lab-row" href="Lab09/index.html">
+
+                    <span class="lab-number">02 / LAB 09</span>
+
+                    <div class="lab-content">
+
+                        <span class="lab-category">
+                            MAKING THINGS INTERACTIVE
+                        </span>
+
+                        <h3>DOM &amp; Events</h3>
+
+                        <p>
+
+                            Truy cập, thay đổi các thành phần
+                            HTML và xử lý sự kiện để tạo
+                            tương tác cho người dùng.
+
+                        </p>
+
+                        <div class="tags">
+
+                            <span>DOM</span>
+
+                            <span>Events</span>
+
+                            <span>Interaction</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="lab-art art-dom"
+                         aria-hidden="true">
+
+                        <svg viewBox="0 0 170 130"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="3"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <rect x="65" y="5"
+                                  width="40" height="30"
+                                  rx="7"/>
+
+                            <path d="M85 35 V58
+                                     M27 58 H143
+                                     M27 58 V85
+                                     M85 58 V85
+                                     M143 58 V85"/>
+
+                            <rect x="7" y="85"
+                                  width="40" height="30"
+                                  rx="7"/>
+
+                            <rect x="65" y="85"
+                                  width="40" height="30"
+                                  rx="7"/>
+
+                            <rect x="123" y="85"
+                                  width="40" height="30"
+                                  rx="7"/>
+
+                        </svg>
+
+                    </div>
+
+                    <span class="lab-arrow">↗</span>
+
+                </a>
+
+                <!-- LAB 10 -->
+                <a class="lab-row" href="Lab10/index.html">
+
+                    <span class="lab-number">03 / LAB 10</span>
+
+                    <div class="lab-content">
+
+                        <span class="lab-category">
+                            WRITE LESS, DO MORE
+                        </span>
+
+                        <h3>jQuery</h3>
+
+                        <p>
+
+                            Tìm hiểu thư viện jQuery để lựa chọn
+                            phần tử, xử lý sự kiện và xây dựng
+                            các hiệu ứng trên giao diện web.
+
+                        </p>
+
+                        <div class="tags">
+
+                            <span>jQuery</span>
+
+                            <span>Selectors</span>
+
+                            <span>Effects</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="lab-art art-jquery"
+                         aria-hidden="true">
+
+                        $( )
+
+                    </div>
+
+                    <span class="lab-arrow">↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ME ================= -->
+
+        <section class="section about-section" id="about">
+
+            <div class="section-label">
+
+                <span class="dot"></span>
+
+                02 / ABOUT ME
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-title">
+
+                    <h2>
+
+                        A little<br>
+
+                        about <span class="accent">me.</span>
+
+                    </h2>
+
+                    <span class="about-handwriting">
+                        Curious by nature!
+                    </span>
+
+                </div>
+
+                <div class="about-content">
+
+                    <p class="large-paragraph">
+
+                        Hello, I'm An — a student at
+                        the University of Economics
+                        Ho Chi Minh City.
+
+                    </p>
+
+                    <p>
+
+                        Mình quan tâm đến công nghệ, thiết kế
+                        và cách các sản phẩm số được xây dựng
+                        để giải quyết những vấn đề thực tế
+                        của người dùng.
+
+                    </p>
+
+                    <p>
+
+                        Portfolio này là nơi mình ghi lại quá trình
+                        học JavaScript trong học phần Phát triển
+                        ứng dụng Web và Thương mại điện tử,
+                        đồng thời nhìn lại những kiến thức đã
+                        tiếp thu qua từng bài thực hành.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KNOWLEDGE ================= -->
+
+        <section class="section knowledge-section"
+                 id="knowledge">
+
+            <div class="section-label">
+
+                <span class="dot"></span>
+
+                03 / KNOWLEDGE &amp; SKILLS
+
+            </div>
+
+            <div class="section-heading">
+
+                <h2>
+
+                    What I've
+                    <span class="accent">learned.</span>
+
+                </h2>
+
+                <p>
+
+                    Từng bước xây dựng kiến thức lập trình
+                    và vận dụng vào phát triển giao diện web.
+
+                </p>
+
+            </div>
+
+            <div class="knowledge-grid">
+
+                <article class="knowledge-card">
+
+                    <span class="knowledge-number">01.</span>
+
+                    <span class="skill-icon">{ }</span>
+
+                    <h3>JavaScript Fundamentals</h3>
+
+                    <ul>
+
+                        <li>Variables &amp; Data Types</li>
+
+                        <li>Conditional Statements</li>
+
+                        <li>Loops &amp; Functions</li>
+
+                        <li>Arrays &amp; Objects</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="knowledge-card">
+
+                    <span class="knowledge-number">02.</span>
+
+                    <span class="skill-icon">&lt;/&gt;</span>
+
+                    <h3>DOM &amp; Events</h3>
+
+                    <ul>
+
+                        <li>DOM Manipulation</li>
+
+                        <li>Event Handling</li>
+
+                        <li>HTML Elements</li>
+
+                        <li>Dynamic Interaction</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="knowledge-card">
+
+                    <span class="knowledge-number">03.</span>
+
+                    <span class="skill-icon">$( )</span>
+
+                    <h3>jQuery</h3>
+
+                    <ul>
+
+                        <li>jQuery Selectors</li>
+
+                        <li>Event Methods</li>
+
+                        <li>Effects &amp; Animations</li>
+
+                        <li>Web Interaction</li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+            <div class="application">
+
+                <span class="application-label">
+
+                    FROM THEORY TO PRACTICE ↘
+
+                </span>
+
+                <p>
+
+                    Những kiến thức này có thể được ứng dụng
+                    vào website thương mại điện tử thông qua
+                    các chức năng như kiểm tra biểu mẫu,
+                    lựa chọn sản phẩm, cập nhật giỏ hàng
+                    và phản hồi thao tác của người dùng.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFLECTION ================= -->
+
+        <section class="section reflection-section"
+                 id="reflection">
+
+            <div class="section-label">
+
+                <span class="dot"></span>
+
+                04 / REFLECTION
+
+            </div>
+
+            <div class="reflection-grid">
+
+                <div>
+
+                    <h2>
+
+                        More than<br>
+
+                        <span class="accent">just code.</span>
+
+                    </h2>
+
+                    <span class="reflection-doodle">
+                        One step at a time.
+                    </span>
+
+                </div>
+
+                <div class="reflection-content">
+
+                    <!-- Điều chỉnh theo trải nghiệm thực tế -->
+
+                    <p>
+
+                        Qua các bài thực hành, mình có cơ hội
+                        hiểu rõ hơn cách JavaScript kết nối
+                        cấu trúc HTML với các hành vi tương tác
+                        trên website.
+
+                    </p>
+
+                    <p>
+
+                        Việc học không chỉ dừng lại ở việc ghi nhớ
+                        cú pháp mà còn là quá trình rèn luyện
+                        tư duy logic, tìm hiểu nguyên nhân lỗi
+                        và lựa chọn cách giải quyết phù hợp.
+
+                    </p>
+
+                    <p>
+
+                        Trong thời gian tới, mình mong muốn
+                        tiếp tục vận dụng những kiến thức này
+                        vào các dự án web thực tế, đặc biệt là
+                        những sản phẩm hướng đến trải nghiệm
+                        người dùng.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div>
+
+                <a class="footer-logo"
+                   href="#top">
+
+                    An.
+
+                </a>
+
+                <p>
+
+                    A little progress every day.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#labs">JavaScript Labs</a>
+
+                <a href="#about">About Me</a>
+
+                <a href="#reflection">Reflection</a>
+
+                <a href="https://github.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    GitHub ↗
+
+                </a>
+
+            </div>
+
+            <a class="back-top" href="#top">
+
+                BACK TO TOP ↑
+
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AN — STUDENT PORTFOLIO
+            </span>
+
+            <span>
+                MADE WITH CURIOSITY &amp; JAVASCRIPT
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
