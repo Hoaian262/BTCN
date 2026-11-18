@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Tạo responsive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .left,
+        .right {
+            height: 400px;
+        }
+
+        .left {
+            background: blue;
+            float: left;
+            width: 70%;
+        }
+
+        .right {
+            background: red;
+            float: right;
+            width: 30%;
+        }
+
+        /* Nếu chiều rộng màn hình từ 768px trở xuống */
+        @media only screen and (max-width: 768px) {
+            .left,
+            .right {
+                width: 100%;
+            }
+        }
+
+        /* Nếu chiều rộng màn hình từ 320px đến 480px thì ẩn right */
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+            .right {
+                display: none;
+            }
+        }
+
+        /* Nếu là chế độ máy in thì ẩn left và mở rộng right */
+        @media only print {
+            .left {
+                display: none;
+            }
+
+            .right {
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Image -->
+  
+    <!-- Responsive Column -->
+    <div class="container">
+        <div class="left">
+              <picture>
+        <source width="400" media="(min-width: 800px)" srcset="https://www.ueh.edu.vn/images/logo-header.png">
+        <source width="400" media="(min-width: 600px)" srcset="https://ctd.ueh.edu.vn/wp-content/uploads/2023/07/cropped-TV_trang_CTD.png">
+        <img src="https://ueh.edu.vn/schools/college/images/logo/bit-header-logo.png" alt="Responsive Image">
+    </picture>
+
+            LEFT
+        </div>
+
+        <div class="right">RIGHT</div>
+    </div>
+<div>
+<h1>NỘI DUNG BUỔI HỌC</h1>
+    <h2>Responsive Web Design</h2>
+
+    <p>
+        Buổi học tập trung tìm hiểu và thực hành kỹ thuật
+        thiết kế website đáp ứng (Responsive Web Design),
+        giúp giao diện tự động điều chỉnh phù hợp với
+        kích thước màn hình và thiết bị sử dụng.
+    </p>
+
+    <h2>1. Nội dung kiến thức</h2>
+
+    <ul>
+        <li>
+            <strong>CSS Media Queries:</strong>
+            Sử dụng @media, min-width và max-width để
+            thiết lập điều kiện hiển thị theo kích thước màn hình.
+        </li>
+
+        <li>
+            <strong>Responsive Column:</strong>
+            Điều chỉnh chiều rộng và bố cục các cột
+            phù hợp với từng thiết bị.
+        </li>
+
+        <li>
+            <strong>Responsive Image:</strong>
+            Sử dụng picture, source và srcset để
+            hiển thị hình ảnh phù hợp với kích thước màn hình.
+        </li>
+
+        <li>
+            <strong>Responsive Print:</strong>
+            Sử dụng @media print để tùy chỉnh
+            bố cục website trong chế độ in.
+        </li>
+
+        <li>
+            <strong>Ẩn và hiển thị phần tử:</strong>
+            Sử dụng display: none để ẩn các phần tử
+            theo điều kiện hiển thị.
+        </li>
+    </ul>
+
+    <h2>2. Nội dung thực hành</h2>
+
+    <ul>
+        <li>Chia giao diện thành hai cột Left (70%) và Right (30%).</li>
+        <li>Chuyển hai cột thành chiều rộng 100% khi màn hình không quá 768px.</li>
+        <li>Ẩn cột Right khi màn hình từ 320px đến 480px.</li>
+        <li>Ẩn cột Left và mở rộng cột Right thành 100% khi in.</li>
+        <li>Thay đổi hình ảnh theo kích thước màn hình.</li>
+    </ul>
+
+    <h2>3. Kết quả đạt được</h2>
+
+    <p>
+        Nắm được cách xây dựng giao diện website linh hoạt,
+        đảm bảo khả năng hiển thị phù hợp trên nhiều thiết bị
+        và nâng cao trải nghiệm người dùng.
+    </p>
+
+</div>
+</body>
+</html>
