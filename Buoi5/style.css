@@ -1,0 +1,72 @@
+.lesson {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-block: clamp(40px, 8vw, 96px);
+}
+
+.lesson-heading {
+    margin-block: clamp(32px, 6vw, 64px);
+    padding-block-end: clamp(24px, 4vw, 48px);
+    border-bottom: 1px solid var(--line);
+}
+
+.lesson-label {
+    color: var(--purple);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+.lesson-heading h1 {
+    margin-block: 12px 20px;
+    font-size: clamp(2.4rem, 7vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+}
+
+.lesson-heading p:last-child,
+.lesson-panel p,
+.lesson-panel ul {
+    max-width: 70ch;
+    line-height: 1.65;
+}
+
+.lesson-panel {
+    margin-block-start: 16px;
+    padding: clamp(20px, 4vw, 40px);
+    background: var(--soft-paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.lesson-panel h2 {
+    margin-block-end: 16px;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    letter-spacing: -0.025em;
+}
+
+.lesson-panel ul {
+    padding-inline-start: 1.25em;
+}
+
+.lesson-panel li + li {
+    margin-block-start: 8px;
+}
+
+.lesson-panel li::marker {
+    color: var(--purple);
+}
+
+.lesson-panel .explore {
+    margin-block-start: 24px;
+}
+
+.responsive-demo picture {
+    display: block;
+    margin-block-end: 20px;
+}
+
+.responsive-demo img {
+    max-width: min(100%, 400px);
+    height: auto;
+}

@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>Tạo responsive</title>
+    <title>Thực hành – Responsive Web Design</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="../JavaScript%20-%20Lab/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
+        .responsive-demo {
+            display: flow-root;
+        }
+
         .left,
         .right {
-            height: 400px;
+            min-height: 400px;
+            padding: clamp(16px, 4vw, 40px);
+            font-family: var(--mono);
+            border: 1px solid var(--line);
         }
 
         .left {
-            background: blue;
+            background: var(--soft-paper);
             float: left;
             width: 70%;
         }
 
         .right {
-            background: red;
+            background: var(--purple);
+            color: var(--paper);
             float: right;
             width: 30%;
         }
@@ -40,12 +53,17 @@
 
         /* Nếu là chế độ máy in thì ẩn left và mở rộng right */
         @media only print {
+            .lesson > .section-label {
+                display: none;
+            }
+
             .left {
                 display: none;
             }
 
             .right {
                 width: 100%;
+                color: var(--ink);
             }
         }
         
@@ -53,21 +71,24 @@
 </head>
 
 <body>
-    <!-- Responsive Image -->
-  
-    <!-- Responsive Column -->
-    <div class="container">
-        <div class="left">
-              <picture>
-        <source width="400" media="(min-width: 800px)" srcset="https://www.ueh.edu.vn/images/logo-header.png">
-        <source width="400" media="(min-width: 600px)" srcset="https://ctd.ueh.edu.vn/wp-content/uploads/2023/07/cropped-TV_trang_CTD.png">
-        <img src="https://ueh.edu.vn/schools/college/images/logo/bit-header-logo.png" alt="Responsive Image">
-    </picture>
-
-            LEFT
+    <main class="section lesson">
+        <a class="section-label" href="index.html">← Về nội dung Buổi 5</a>
+        <header class="lesson-heading">
+            <p class="lesson-label">BUỔI 5 / THỰC HÀNH</p>
+            <h1>Responsive <span class="accent">Web Design</span></h1>
+            <p>Thay đổi chiều rộng cửa sổ để xem bố cục hai cột và hình ảnh thích ứng.</p>
+        </header>
+        <div class="responsive-demo">
+            <div class="left">
+                <picture>
+                    <source width="400" media="(min-width: 800px)" srcset="https://www.ueh.edu.vn/images/logo-header.png">
+                    <source width="400" media="(min-width: 600px)" srcset="https://ctd.ueh.edu.vn/wp-content/uploads/2023/07/cropped-TV_trang_CTD.png">
+                    <img src="https://ueh.edu.vn/schools/college/images/logo/bit-header-logo.png" alt="Logo UEH">
+                </picture>
+                LEFT
+            </div>
+            <div class="right">RIGHT</div>
         </div>
-
-        <div class="right">RIGHT</div>
-    </div>
+    </main>
 </body>
 </html>
