@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 3 thẻ meta trên phải nằm đầu tiên trong head -->
+  <title>ART WORLD - Trang chủ</title>
+
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Font Barlow (gần giống font của Pop Mart) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="libs/star-rating/css/star-rating.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (2 tầng như Pop Mart) ================= -->
+  <header class="pm-header">
+    <div class="pm-top">
+      <div class="pm-left">
+        <!-- Mobile: nút mở menu -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <!-- Màn hình lớn: ô search (ẩn trên mobile) -->
+        <form class="pm-search hidden-xs" action="ecommerce.html">
+          <input type="text" class="form-control" placeholder="Tìm kiếm">
+          <button type="submit" class="pm-search-btn" aria-label="Tìm kiếm"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+
+      <div class="pm-center">
+        <!-- LOGO: bỏ file logo vào images/logo.png (cao khoảng 34px). Chưa có file thì hiện chữ ART WORLD -->
+        <a class="pm-logo" href="ecommerce.html">
+          <img src="images/logo.png" alt="ART WORLD" class="homepage-header-logo" height="34" data-fb="1"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+          <span class="logo-text">ART WORLD</span>
+        </a>
+      </div>
+
+      <ul class="pm-right list-inline">
+        <li><a href="#" aria-label="Yêu thích"><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+        <li><a href="ecommerce-status.html" aria-label="Tài khoản"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="#" class="pm-cart" aria-label="Giỏ hàng"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></a></li>
+        <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#myModal">Sign in</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile: hiện ô search ở dưới -->
+    <form class="pm-search-mobile visible-xs-block" action="ecommerce.html">
+      <input type="text" class="form-control" placeholder="Tìm kiếm">
+    </form>
+
+    <nav class="navbar navbar-default pm-menu">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="ecommerce.html">Trang chủ</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false">Nhân vật <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="ecommerce.html?cat=the-monsters">The Monsters</a></li>
+            <li><a href="ecommerce.html?cat=skull-panda">Skull Panda</a></li>
+            <li><a href="ecommerce.html?cat=hirono">Hirono</a></li>
+            <li><a href="ecommerce.html?cat=molly">Molly</a></li>
+            <li><a href="ecommerce.html?cat=crybaby">CryBaby</a></li>
+            </ul>
+          </li>
+          <li><a href="ecommerce-status.html">Đơn hàng</a></li>
+          <li class="visible-xs"><a href="#" data-toggle="modal" data-target="#myModal">Sign in</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= SLIDER (3 banner) ================= -->
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li class="active"><button type="button" data-target="#carousel-example-generic" data-slide-to="0" aria-label="Xem banner 1"></button></li>
+      <li><button type="button" data-target="#carousel-example-generic" data-slide-to="1" aria-label="Xem banner 2"></button></li>
+      <li><button type="button" data-target="#carousel-example-generic" data-slide-to="2" aria-label="Xem banner 3"></button></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active"><img src="images/Banner1.png" alt="Banner 1"></div>
+      <div class="item"><img src="images/Banner2.png" alt="Banner 2"></div>
+      <div class="item"><img src="images/Banner3.png" alt="Banner 3" style="object-position: center bottom;"></div>
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="container-fluid pm-wrap">
+    <h2 class="page-title" id="list-title">Tất cả sản phẩm</h2>
+    <div class="row">
+
+      <!-- ===== Danh mục ===== -->
+      <div class="col-sm-4 col-md-3">
+        <h3 class="side-title">Danh mục</h3>
+        <div class="list-group" id="category-list">
+        <a href="ecommerce.html" class="list-group-item active" data-cat="all" data-name="Tất cả sản phẩm"><span class="badge"></span>Tất cả</a>
+        <a href="ecommerce.html?cat=the-monsters" class="list-group-item" data-cat="the-monsters" data-name="The Monsters"><span class="badge"></span>The Monsters</a>
+        <a href="ecommerce.html?cat=skull-panda" class="list-group-item" data-cat="skull-panda" data-name="Skull Panda"><span class="badge"></span>Skull Panda</a>
+        <a href="ecommerce.html?cat=hirono" class="list-group-item" data-cat="hirono" data-name="Hirono"><span class="badge"></span>Hirono</a>
+        <a href="ecommerce.html?cat=molly" class="list-group-item" data-cat="molly" data-name="Molly"><span class="badge"></span>Molly</a>
+        <a href="ecommerce.html?cat=crybaby" class="list-group-item" data-cat="crybaby" data-name="CryBaby"><span class="badge"></span>CryBaby</a>
+        </div>
+      </div>
+
+      <!-- ===== Sản phẩm ===== -->
+      <div class="col-sm-8 col-md-9">
+        <div class="row" id="product-list">
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="the-monsters" data-product-id="sp1">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+          <span class="badge-tag">New</span>
+            <a href="ecommerce-detail.html"><img src="https://prod-apac-r2.popmart.com/cdn-cgi/image/width=1080%2Cformat=webp/https://prod-eurasian-res.popmart.com/default/20251111_150627_775349____1_____1200x1200.jpg" alt="THE MONSTERS 1:00 A.M. Series Figures"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">The Monsters</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">THE MONSTERS 1:00 A.M. Series Figures</a></h4>
+            <p class="pc-price">320.000đ<del>200.000đ</del></p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="9370">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="skull-panda" data-product-id="sp2">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+          <span class="badge-tag best-seller">Best Seller</span>
+            <a href="ecommerce-detail.html"><img src="https://prod-apac-r2.popmart.com/cdn-cgi/image/width=1080%2Cformat=webp/https://prod-eurasian-res.popmart.com/default/20251111_150627_775349____1_____1200x1200.jpg" alt="Skull Panda"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">Skull Panda</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 2]</a></h4>
+            <p class="pc-price">000.000đ<del>000.000đ</del></p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-hot" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="glyphicon glyphicon-fire"></span> Sắp bán hết</div>
+              </div>
+              <small class="countdown" data-seconds="5230">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="hirono" data-product-id="sp3">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 3"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">Hirono</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 3]</a></h4>
+            <p class="pc-price">000.000đ<del>000.000đ</del></p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="22450">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="molly" data-product-id="sp4">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+          <span class="badge-tag">New</span>
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 4"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">Molly</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 4]</a></h4>
+            <p class="pc-price">000.000đ</p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="40000">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="crybaby" data-product-id="sp5">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 5"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">CryBaby</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 5]</a></h4>
+            <p class="pc-price">000.000đ<del>000.000đ</del></p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-hot" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span class="glyphicon glyphicon-fire"></span> Sắp bán hết</div>
+              </div>
+              <small class="countdown" data-seconds="3600">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="the-monsters" data-product-id="sp6">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 6"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">The Monsters</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 6]</a></h4>
+            <p class="pc-price">000.000đ</p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="18000">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="hirono" data-product-id="sp7">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+          <span class="badge-tag best-seller">Best Seller</span>
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 7"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">Hirono</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 7]</a></h4>
+            <p class="pc-price">000.000đ<del>000.000đ</del></p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="12600">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-3 product" data-cat="crybaby" data-product-id="sp8">
+        <div class="thumbnail product-card">
+          <div class="pc-img">
+            <a href="ecommerce-detail.html"><img src="images/placeholder.svg" alt="Tên sản phẩm 8"></a>
+            <div class="add-to-cart">
+              <a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a>
+            </div>
+          </div>
+          <div class="caption">
+            <p class="pc-series">CryBaby</p>
+            <h4 class="pc-name"><a href="ecommerce-detail.html">[Tên sản phẩm 8]</a></h4>
+            <p class="pc-price">000.000đ</p>
+            <div class="ratings">
+              <p class="pull-right"><a href="ecommerce-detail.html#comments"></a></p>
+              <input type="text" class="rating-display" aria-label="Điểm đánh giá">
+            </div>
+            <!-- Thanh trạng thái kho (Bootstrap progress): từ 80% trở lên dùng stock-hot + "Sắp bán hết" -->
+            <div class="stock-wrap">
+              <div class="progress">
+                <div class="progress-bar stock-normal" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="countdown" data-seconds="31800">0 ngày 02:36:10</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      &copy; 2026 ART WORLD &middot; Bài thực hành Phát triển ứng dụng WEB/TMĐT
+    </div>
+  </footer>
+
+  <!-- ================= MODAL SIGN IN ================= -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <form id="signin-form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Đăng nhập</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="signin-email">Email</label>
+              <input type="email" class="form-control" id="signin-email" placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="signin-pass">Mật khẩu</label>
+              <input type="password" class="form-control" id="signin-pass" placeholder="********">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-pm" data-dismiss="modal">Đóng</button>
+            <button type="submit" class="btn btn-pm btn-pm-dark">Đăng nhập</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (cần cho các plugin JS của Bootstrap) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="libs/star-rating/js/star-rating.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

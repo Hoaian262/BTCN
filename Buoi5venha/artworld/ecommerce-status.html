@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 3 thẻ meta trên phải nằm đầu tiên trong head -->
+  <title>Trạng thái đơn hàng - ART WORLD</title>
+
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Font Barlow (gần giống font của Pop Mart) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+  <!-- bootstrap-star-rating (thay glyphicon-star) -->
+  <link rel="stylesheet" href="libs/star-rating/css/star-rating.min.css">
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (2 tầng như Pop Mart) ================= -->
+  <header class="pm-header">
+    <div class="pm-top">
+      <div class="pm-left">
+        <!-- Mobile: nút mở menu -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <!-- Màn hình lớn: ô search (ẩn trên mobile) -->
+        <form class="pm-search hidden-xs" action="ecommerce.html">
+          <input type="text" class="form-control" placeholder="Tìm kiếm">
+          <button type="submit" class="pm-search-btn" aria-label="Tìm kiếm"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+
+      <div class="pm-center">
+        <!-- LOGO: bỏ file logo vào images/logo.png (cao khoảng 34px). Chưa có file thì hiện chữ ART WORLD -->
+        <a class="pm-logo" href="ecommerce.html">
+          <img src="images/logo.png" alt="ART WORLD" class="homepage-header-logo" height="34" data-fb="1"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+          <span class="logo-text">ART WORLD</span>
+        </a>
+      </div>
+
+      <ul class="pm-right list-inline">
+        <li><a href="#" aria-label="Yêu thích"><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+        <li><a href="ecommerce-status.html" aria-label="Tài khoản"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="#" class="pm-cart" aria-label="Giỏ hàng"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">0</span></a></li>
+        <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#myModal">Sign in</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile: hiện ô search ở dưới -->
+    <form class="pm-search-mobile visible-xs-block" action="ecommerce.html">
+      <input type="text" class="form-control" placeholder="Tìm kiếm">
+    </form>
+
+    <nav class="navbar navbar-default pm-menu">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="ecommerce.html">Trang chủ</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false">Nhân vật <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="ecommerce.html?cat=the-monsters">The Monsters</a></li>
+            <li><a href="ecommerce.html?cat=skull-panda">Skull Panda</a></li>
+            <li><a href="ecommerce.html?cat=hirono">Hirono</a></li>
+            <li><a href="ecommerce.html?cat=molly">Molly</a></li>
+            <li><a href="ecommerce.html?cat=crybaby">CryBaby</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="ecommerce-status.html">Đơn hàng</a></li>
+          <li class="visible-xs"><a href="#" data-toggle="modal" data-target="#myModal">Sign in</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid pm-wrap">
+    <h2 class="page-title" style="margin-top:30px">Trạng thái đơn hàng</h2>
+    <div class="row">
+
+      <!-- ===== Quản lý đơn hàng ===== -->
+      <div class="col-sm-4 col-md-3">
+        <h3 class="side-title">Quản lý đơn hàng</h3>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Tất cả đơn hàng</a>
+          <a href="#" class="list-group-item">Quản lý đánh giá</a>
+          <a href="#" class="list-group-item">Mã giảm giá của tôi</a>
+          <a href="#" class="list-group-item">Địa chỉ giao hàng</a>
+        </div>
+      </div>
+
+      <!-- ===== Danh sách đơn hàng ===== -->
+      <div class="col-sm-8 col-md-9">
+        <div class="row order-head hidden-xs" style="margin:0">
+          <div class="col-sm-5 col-sm-offset-1">Sản phẩm</div>
+          <div class="col-sm-1">SL</div>
+          <div class="col-sm-2">Thành tiền</div>
+          <div class="col-sm-2">Trạng thái</div>
+          <div class="col-sm-1">Tin nhắn</div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 1: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp1" data-order-product-id="sp1">[Tên sản phẩm 1]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-pm">Track</button></div>
+            <div class="col-sm-2"><a href="#">1 Message</a></div>
+          </div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 2: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp2" data-order-product-id="sp2">[Tên sản phẩm 2]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-status-done">Hoàn thành</button></div>
+            <div class="col-sm-2"><a href="#">1 Message</a></div>
+          </div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 3: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp3" data-order-product-id="sp3">[Tên sản phẩm 3]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-status-cancel">Đã hủy</button></div>
+            <div class="col-sm-2"><a href="#">0 Messages</a></div>
+          </div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 4: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp4" data-order-product-id="sp4">[Tên sản phẩm 4]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-pm">Track</button></div>
+            <div class="col-sm-2"><a href="#">1 Message</a></div>
+          </div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 5: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp5" data-order-product-id="sp5">[Tên sản phẩm 5]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-status-done">Hoàn thành</button></div>
+            <div class="col-sm-2"><a href="#">1 Message</a></div>
+          </div>
+        </div>
+
+        <!-- ===== ĐƠN HÀNG 6: sửa tên sản phẩm, số lượng, giá, trạng thái ===== -->
+        <div class="order-row">
+          <div class="row">
+            <div class="col-sm-1"><img class="img-responsive" src="images/placeholder.svg" alt=""></div>
+            <div class="col-sm-4"><a href="ecommerce-detail.html?id=sp6" data-order-product-id="sp6">[Tên sản phẩm 6]</a></div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-2">[Giá đơn hàng]</div>
+            <div class="col-sm-2"><button class="btn btn-sm btn-pm">Track</button></div>
+            <div class="col-sm-2"><a href="#">1 Message</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      &copy; 2026 ART WORLD &middot; Bài thực hành Phát triển ứng dụng WEB/TMĐT
+    </div>
+  </footer>
+
+  <!-- ================= MODAL SIGN IN ================= -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <form id="signin-form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Đăng nhập</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="signin-email">Email</label>
+              <input type="email" class="form-control" id="signin-email" placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="signin-pass">Mật khẩu</label>
+              <input type="password" class="form-control" id="signin-pass" placeholder="********">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-pm" data-dismiss="modal">Đóng</button>
+            <button type="submit" class="btn btn-pm btn-pm-dark">Đăng nhập</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (cần cho các plugin JS của Bootstrap) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="libs/star-rating/js/star-rating.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
