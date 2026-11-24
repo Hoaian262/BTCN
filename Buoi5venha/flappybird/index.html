@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Military Flappy Bird</title>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <main id="game_viewport">
+        <div id="game_frame">
+            <div id="container">
+                <div id="sky" class="scenery"></div>
+                <div id="clouds" class="scenery moving"></div>
+                <div id="distant" class="scenery moving"></div>
+                <div id="battlefield" class="scenery moving"></div>
+                <div id="ground" class="scenery moving"></div>
+                <div id="bird"></div>
+                <div id="ghost" aria-hidden="true"></div>
+                <div id="pole_1" class="pole"></div>
+                <div id="pole_2" class="pole"></div>
+                <button id="play_btn" type="button"><strong>START GAME</strong><span class="key" aria-hidden="true">↓</span><span class="keyboard_hint">PRESS DOWN TO PLAY</span><span class="touch_hint">TAP TO FLY</span></button>
+                <span id="score">0</span>
+                <span id="level">Level 1</span>
+                <div id="notice" aria-live="polite"></div>
+                <div id="result"><img id="medal" src="sprites/medal.png" alt="Gold medal"><strong id="result_title"></strong><span id="final_score"></span><button id="restart_btn">PLAY AGAIN</button><small class="keyboard_hint">PRESS ↓ TO RETRY</small></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="sounds/level-up-data.js"></script>
+    <script src="sounds/game-over-data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
