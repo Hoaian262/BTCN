@@ -1,0 +1,1 @@
+{"name":"todu","version":"1.0.0","scripts":{"start":"node server.js"},"dependencies":{"express":"^4.21.2","mysql2":"^3.12.0","dotenv":"^16.4.7"}}
